@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+	<a class="navbar-brand" href="/depart/info"><strong>用户管理系统</strong></a>
+	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="navbar-collapse collapse" id="navbarColor02" style="">
+		<ul class="navbar-nav mr-auto d-flex align-items-center">
+            <li class="nav-item">
+			<a class="nav-link" href="/admin/info/">管理员管理 </a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="/depart/info/">部门管理 </a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="/user/info/">用户管理</a>
+			</li>
+            <li class="nav-item">
+			<a class="nav-link" href="/pretty/info/">靓号管理</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div>
+    <div>
+        修改部门
+    </div>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <label for="">标题</label>
+                <div>
+                    <input type="text" name="title" placeholder="部门" value="{{ row_object.title }}">
+                </div>
+            </div>
+            <div>
+                <button type="submit">提 交</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

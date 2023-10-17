@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div>
+    <div>
+        新建用户moldeform
+    </div>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <div>
+                    <label>{{ field.label }}</label>
+                     {{ field }}
+                     <span style="color: red">{{ field.errors.0 }}</span>
+
+            </div>
+            {% endfor %}
+            <div>
+                <button type="submit">提 交</button>
+            </div>
+        </form>
+    </div>
+
+    </div>
+{% endblock %}

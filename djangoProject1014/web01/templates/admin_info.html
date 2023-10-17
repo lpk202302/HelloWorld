@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+    <div class="form-control">
+        <a href="/admin/add/" class="btn-success">添加管理员</a>
+    </div>
+    <div>
+        <span class="glyphicon glyphicon-th-list" aria-hidden="true">管理员列表</span>
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                     ID
+                </th>
+                <th >
+                     用户名
+                </th>
+                <th >
+                     密码
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in queryset %}
+            <tr>
+                <th >
+                     {{ obj.id }}
+                </th>
+                <td>
+                     {{ obj.username }}
+                </td>
+                <th >
+                     {{ obj.password }}
+                </th>
+                <td>
+                    <a class="btn btn-primary btn-xs" href="/admin/{{ obj.id }}/edit/">修改</a>
+                    <a class="btn btn-danger btn-xs" href="/admin/{{ obj.id }}/delete/">删除</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
